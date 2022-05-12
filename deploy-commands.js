@@ -6,7 +6,8 @@ const guildId = '973790641546997791';
 
 const commands = [
     new SlashCommandBuilder().setName('madeby').setDescription('제작자'),
-    new SlashCommandBuilder().setName('급식').setDescription('상문고등학교 오늘의 급식')
+    new SlashCommandBuilder().setName('급식').setDescription('상문고등학교 오늘의 급식'),
+    new SlashCommandBuilder().setName('학교정보').setDescription('상문고등학교 정보')
 ]
     .map(command => command.toJSON());
 

@@ -2,10 +2,15 @@ const { Client, Intents, MessageActionRow, MessageButton } = require('discord.js
 const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
 
 
+const Neis = require("@my-school.info/neis-api");
+const neis = new Neis({ KEY: process.env.KEY, Type: "json" });
+
+
+
+
 client.once('ready', () => {
     client.user.setActivity('응애 나 애기 코더' )
     console.log('ready');
-
 });
 
 client.on('interactionCreate', async interaction => {
@@ -18,8 +23,7 @@ client.on('interactionCreate', async interaction => {
     }
 
     if (commandName === '급식'){
-        //var lunch = school.getMealInfo(2022, 1);
-        await interaction.reply(/*lunch()*/);
+        await interaction.reply();
     }
 });
 
