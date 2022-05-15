@@ -20,6 +20,7 @@ function gettodaymeal() {
     });
 }
 
+
 const exampleEmbed = new MessageEmbed()
     .setTitle("상문고등학교")
     .setColor('0f4c81')
