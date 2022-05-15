@@ -13,36 +13,27 @@ function getTodayLabel() {
     return todayLabel;
 }
 
-function todaymeal() {
+function gettodaymeal() {
     school.getMeal(2022, 5).then(d => {
         var n = day;
-        var tod = getTodayLabel();
-
-        if (tod = "토요일", "일요일") {
-            console.log("오늘의 급식은 당신이 만드는군요!");
-        }
-
-        else {
-            console.log("오늘의 급식 : " + "\n" +
-                d[n].lunch + "\n"
-            );
-        }
-
+        console.log("오늘의 급식 : " + "\n" + d[n].lunch + "\n");
     });
 }
 
 const exampleEmbed = new MessageEmbed()
-    .setTitle("오늘의 급식")
+    .setTitle("상문고등학교")
     .setColor('0f4c81')
     .setDescription("오늘은" + month + "월" + day + "일 입니다")
     .addFields(
-        { name: 'Regular field title', value: 'Some value here' },
+        { name: '오늘의급식은', value: '' },
     );
 
 client.once('ready', () => {
-    client.user.setActivity('응애 나 애기 코더' )
+    var tod = getTodayLabel();
+    client.user.setActivity('버그와 싸우기' )
     console.log('ready');
-    todaymeal()
+    console.log(tod);
+    gettodaymeal()
 });
 
 client.on('interactionCreate', async interaction => {
